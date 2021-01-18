@@ -1,13 +1,13 @@
 <template>
   <div id="app">
       <SearchView v-on:search="searchRepositories"></SearchView>
-      <ListView v-bind:repositories="repositories"></ListView>
+      <CardListView v-bind:propsData="repositories"></CardListView>
   </div>
 </template>
 
 <script>
 import SearchView from './components/SearchView'
-import ListView from './components/ListView'
+import CardListView from './components/CardListView'
 import { fetchRepositories } from './api/index.js'
 
 export default {
@@ -25,7 +25,6 @@ export default {
         .then(response => {
             for(var i=0;i<response.data.length;i++){
                 response.data[i].color ="white"
-                console.log(response.data)
                 this.repositories.push(response.data[i])
             }
         })
@@ -41,7 +40,7 @@ export default {
   },
   components : {
      SearchView,
-     ListView
+     CardListView
   }
 }
 </script>

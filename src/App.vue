@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-      <SearchView v-on:search="searchRepositories"></SearchView>
-      <CardListView v-bind:propsData="repositories"></CardListView>
+      <GridView v-on:search="search" v-bind:gridData="repositories"></GridView>
   </div>
 </template>
 
 <script>
-import SearchView from './components/SearchView'
-import CardListView from './components/CardListView'
+import GridView from './components/GridView'
 import { fetchRepositories } from './api/index.js'
 
 export default {
@@ -17,7 +15,7 @@ export default {
     }
   },
   methods: {
-    searchRepositories(keyword){
+    search(keyword){
      if(this.repositories.length > 0) {
        this.repositories = [];
      }
@@ -38,13 +36,14 @@ export default {
     },
    
   },
-  components : {
-     SearchView,
-     CardListView
+  components : { GridView,
   }
 }
 </script>
 
-<style>
+<style scoped>
+body {
+  background-color: black;
+}
 
 </style>

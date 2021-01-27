@@ -1,9 +1,8 @@
 <template>
-  <div class="inputBox shadow">
-      <b-form-input size="sm"
+  <div>
+      <b-form-input size="sm" id="searchInput"
           type="text" placeholder="Input Your Github Name"
-          v-on:keyup.enter="search" required
-          v-model="keyword" >
+          v-on:keyup.enter="search" required v-model="keyword" >
       </b-form-input>
   </div>
 </template>
@@ -17,13 +16,16 @@ export default {
     },
     methods: {
         search() {
-          this.$emit('search', this.keyword)
+          this.$emit('search-grid', this.keyword)
+          this.keyword = ''
         }
     }
 }
 </script>
 
-<style>
-
-
+<style >
+#searchInput{
+    width:50%;
+    margin: 0 auto; 
+}
 </style>

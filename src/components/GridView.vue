@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CardListView  from './CardListView'
+import CardListView  from '../views/CardListView'
 import SearchView  from './SearchView'
     
 export default {

@@ -17,7 +17,8 @@ export default {
     },
     methods: {
         search() {
-           this.$store.dispatch('FETCH_REPOSITORIES', this.keyword);
+           this.$router.push({name: 'repositories', params:{userId : this.keyword}}).catch(()=>{});
+           this.keyword = '';
         }
     }
 }

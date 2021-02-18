@@ -1,6 +1,8 @@
 <template>
   <header>
       <search-view></search-view>  
+      <router-link to="/login">Login</router-link>
+      <router-link to="/login">Logout</router-link>
   </header>
 </template>
 <script>
@@ -35,11 +37,6 @@ header a {
   border: 1px solid transparent;
 }
 
-a:active,
-a:hover,
-a.router-link-active {
-  border: 1px solid #21262D;
-}
 
 header ul {
   list-style: none;

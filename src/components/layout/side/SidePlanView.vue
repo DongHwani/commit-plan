@@ -6,15 +6,14 @@
 
 <script>
 export default {
-
+  created() {
+    const loginMember = localStorage.getItem('todo')
+    this.$store.dispatch('FETCH_MY_REPOSITORIES', loginMember);
+  }
 }
 </script>
 
 <style scoped>
-.side-container {
-    background-color: #0d1117;
-    width: 15%;
-}
 h5 {
   font-size: 1rem;
   color: white;

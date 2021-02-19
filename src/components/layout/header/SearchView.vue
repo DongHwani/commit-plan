@@ -1,15 +1,20 @@
 <template>
-  <div class="header-search">
       <b-form-input id="search-input" 
              type="text" 
-             placeholder="Input Your Github Name"
+             :placeholder="placeholder"
              @keyup.enter="search" required v-model="keyword">
       </b-form-input>
-  </div>
 </template>
 
 <script>
 export default {
+    props:{
+        placeholder:{
+            type: String,
+            requried: false,
+            default: ''
+        }
+    },
     data(){
       return {
           keyword: ""
@@ -26,7 +31,6 @@ export default {
 
 <style scoped>
 #search-input{
-    width: 100%;
     background-color: #0D1117; 
     border-radius: 6px;
     border: 1px solid #828282;

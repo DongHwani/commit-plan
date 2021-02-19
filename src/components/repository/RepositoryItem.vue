@@ -1,13 +1,15 @@
 <template>
-  <li>
+  <b-card :title="repository.full_name" :sub-title="repository.description">
+
+    <b-card-text>A second paragraph of text in the card.</b-card-text>
+
+    <a href="#" class="card-link">Card link</a>
+    <b-link href="#" class="card-link">Another link</b-link>
+  </b-card>
+  <!-- <li>
     <h3>{{ repository.full_name }}</h3>
-    <h4></h4>
-    <div>
-      
-    </div>
-    <div class="actions">
-    </div>
-  </li>
+
+  </li> -->
 </template>
 
 <script>

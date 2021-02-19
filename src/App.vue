@@ -33,6 +33,10 @@ body {
   display: flex;
   height: 100%;
 }
+.side-container{
+  background-color: #0D1117;
+  width:17%;
+}
 
 
 </style>
